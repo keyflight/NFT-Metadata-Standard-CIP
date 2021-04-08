@@ -49,6 +49,7 @@ The structure allows for multiple token mints, also with different policies, in 
       [assetName]: {
         "name": "<name>",
         "image": "<src_link>",
+        "type": "<mime_type>",
         "media" : [
           {
           "src": "<src_link>",
@@ -67,6 +68,8 @@ The structure allows for multiple token mints, also with different policies, in 
 ```
 
 The <b>image</b> and <b>name</b> property are marked as required. <b>image</b> should be used as thumbnail or as actual link if the NFT is an image (ideally <= 1MB).
+
+The <b>type</b> property is optional. Most of the images types, like .svg, .png, .jpg, .gif are supported straight away. It may be required for unusual types or embedded sources.
 
 The <b>media</b> property is optional. In case the NFT is not an image, this property should be used. Any kind of media file can be attached, also multiple attachments are possible.
 
