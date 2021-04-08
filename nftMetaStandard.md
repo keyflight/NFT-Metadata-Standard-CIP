@@ -28,7 +28,7 @@ Cardano has the ability to send metadata in a transaction, that's the way we can
 
 ## Considerations
 
-That being said, we have unique metadata link to a token and can always prove that with 100% certainty. No one else can manipulate the link except if the policy allows it to (update mechanism, see ).
+That being said, we have unique metadata link to a token and can always prove that with 100% certainty. No one else can manipulate the link except if the policy allows it to (<a href="#update">update mechanism</a>).
 
 ## Specification
 
@@ -86,9 +86,9 @@ As mentioned above this metadata structure allows to have either one token or mu
 4. Lookup the Asset name of the token
 5. You end up with the correct metadata for the token
 
-### Update metadata for a specific token
+### <span id="update">Update metadata link for a specific token</span>
 
-The reason for choosing the latest mint transaction
+Using the latest mint transaction with the label 721 as valid metadata for a token allows to update the metadata link of this token. As soon as a new mint transaction is occuring including metadata with the label 721, the old metadata is overwritten. This is only possible if the policy allows to mint or burn the same token again.
 
 ## References
 
@@ -96,3 +96,7 @@ The reason for choosing the latest mint transaction
 - CIP about reserved labels: https://github.com/cardano-foundation/CIPs/blob/master/CIP-0010/CIP-0010.md
 - EIP-721: https://eips.ethereum.org/EIPS/eip-721
 - URI: https://tools.ietf.org/html/rfc3986, https://tools.ietf.org/html/rfc2397
+
+## Copyright
+
+This CIP is licensed under CC-BY-4.0
