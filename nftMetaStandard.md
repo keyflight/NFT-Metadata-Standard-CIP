@@ -28,7 +28,7 @@ Cardano has the ability to send metadata in a transaction, that's the way we can
 
 ## Considerations
 
-That being said, we have unique metadata link to a token and can always prove that with 100% certainty. No one else can manipulate the link except if the policy allows it to (update mechanism).
+That being said, we have unique metadata link to a token and can always prove that with 100% certainty. No one else can manipulate the link except if the policy allows it to (update mechanism, see ).
 
 ## Specification
 
@@ -45,18 +45,15 @@ The structure allows for multiple token mints, also with different policies, in 
 ```
 {
   "721": {
-    [policyId]: {
-      [assetName]: {
+    [policy_id]: {
+      [asset_name]: {
         "name": "<name>",
-        "image": "<src_link>",
+        "image": "<uri>",
+        "description": "<description>"
+
         "type": "<mime_type>",
-        "media" : [
-          {
-          "src": "<src_link>",
-          "type": "<mime_type>"
-          }
-          ...
-        ],
+        "src": "<uri>"
+
         <other properties>
       },
       ...
@@ -67,11 +64,11 @@ The structure allows for multiple token mints, also with different policies, in 
 }
 ```
 
-The <b>image</b> and <b>name</b> property are marked as required. <b>image</b> should be used as thumbnail or as actual link if the NFT is an image (ideally <= 1MB).
+The <b>image</b> and <b>name</b> property are marked as required. <b>image</b> should be an URI pointing to a resource with mime type image/\* used as thumbnail or as actual link if the NFT is an image (ideally <= 1MB).
 
-The <b>type</b> property is optional. Most of the image types, like .svg, .png, .jpg, .gif are supported straight away. It may be required for unusual types or embedded sources.
+The <b>description</b> property is optional.
 
-The <b>media</b> property is optional. In case the NFT is not an image, this property should be used. Any kind of media file can be attached, also multiple attachments are possible.
+The <b>type</b> and <b>src</b> properties are optional.
 
 The <b>version</b> property is also optional. If not specified the version is 1.0. Ongoing versions require the <b>version</b> key.
 
@@ -88,3 +85,14 @@ As mentioned above this metadata structure allows to have either one token or mu
 3. Lookup the Policy Id of the token
 4. Lookup the Asset name of the token
 5. You end up with the correct metadata for the token
+
+### Update metadata for a specific token
+
+The reason for choosing the latest mint transaction
+
+## References
+
+- Mime type: https://tools.ietf.org/html/rfc6838).
+- CIP about reserved labels: https://github.com/cardano-foundation/CIPs/blob/master/CIP-0010/CIP-0010.md
+- EIP-721: https://eips.ethereum.org/EIPS/eip-721
+- URI: https://tools.ietf.org/html/rfc3986, https://tools.ietf.org/html/rfc2397
