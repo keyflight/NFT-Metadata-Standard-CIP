@@ -74,9 +74,9 @@ The <b>version</b> property is also optional. If not specified the version is 1.
 
 This structure really just defines the basis. New properties and standards can be defined later on for varies uses cases. That's why there is an "other properties" tag.
 
-The retreiveal of the metadata should be the the same for all however.
+The retrieval of the metadata should be the the same for all however.
 
-### Retreive valid metadata for a specific token
+### Retrieve valid metadata for a specific token
 
 As mentioned above this metadata structure allows to have either one token or multiple tokens with also different policies in a single mint transaction. A third party tool can then fetch the token metadata seamlessly. It doesn't matter if the metadata includes just one token or multiple. The proceedure for the third party is always the same:
 
