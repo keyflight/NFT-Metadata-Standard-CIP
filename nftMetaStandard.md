@@ -74,7 +74,7 @@ The <b>version</b> property is also optional. If not specified the version is 1.
 
 This structure really just defines the basis. New properties and standards can be defined later on for varies uses cases. That's why there is an "other properties" tag.
 
-The retrieval of the metadata should be the the same for all however.
+The retrieval of the metadata should be the same for all however.
 
 ### Retrieve valid metadata for a specific token
 
