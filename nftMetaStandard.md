@@ -83,5 +83,5 @@ As mentioned above this metadata structure allows to have either one token or mu
 1. Find the latest mint transaction with the label 721 in the metadata of the specific token
 2. Lookup the 721 key
 3. Lookup the Policy Id of the token
-4. Lookup the the Asset name of the token
+4. Lookup the Asset name of the token
 5. You end up with the correct metadata for the token
