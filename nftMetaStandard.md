@@ -76,6 +76,50 @@ This structure really just defines the basis. New properties and standards can b
 
 The retrieval of the metadata should be the same for all however.
 
+### Some examples of how this could be used
+
+Video File
+```js
+{
+  "721": {
+    [policy_id]: {
+      [asset_name]: {
+        "name": "Cat Video",
+        "image": "<uri>", // stored on ipfs: https://i.ytimg.com/vi/XyNlqQId-nk/hqdefault.jpg 
+        "description": "<description>"
+        "type": "video/mp4",
+        "src": "<uri>" // stored on ipfs: https://www.youtube.com/watch?v=XyNlqQId-nk
+        <other properties>
+      },
+      ...
+    },
+    ...,
+    "version":"<version>"
+  }
+}
+```
+
+PDF Document
+```js
+{
+  "721": {
+    [policy_id]: {
+      [asset_name]: {
+        "name": "Legal Document",
+        "image": "<uri>", // stored on ipfs: thumbnail_of_legal_document.jpg
+        "description": "<description>"
+        "type": "application/pdf",
+        "src": "<uri>" // stored on ipfs: legal_document.pdf
+        <other properties>
+      },
+      ...
+    },
+    ...,
+    "version":"<version>"
+  }
+}
+```
+
 ### Retrieve valid metadata for a specific token
 
 As mentioned above this metadata structure allows to have either one token or multiple tokens with also different policies in a single mint transaction. A third party tool can then fetch the token metadata seamlessly. It doesn't matter if the metadata includes just one token or multiple. The proceedure for the third party is always the same:
